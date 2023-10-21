@@ -1,0 +1,38 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main () 
+{
+    vector<int> pr;
+
+    pr = {4,1,2};
+
+      unordered_map<int,int> mp;
+
+        for(int i=0;i<pr.size();i++)
+           mp[pr[i]] = i;
+
+        sort(pr.begin(),pr.end());
+
+        int k=0,l=pr.size()-1;
+
+        while(k<l)
+        {
+            if(mp[pr[k]]<mp[pr[l]])
+            {
+                cout<<pr[l]<<" "<<pr[k]<<" ";
+                // return pr[l]-pr[k];
+            }
+            
+            l--;
+
+            if( l == 1)
+            {
+                l = pr.size()-1;
+                k++;
+            }
+        }
+
+
+        return 0;
+}
